@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="鍵のトラブル、最短15分で駆けつけます。24時間365日、東京・神奈川・埼玉対応。鍵開け8,800円〜、鍵交換15,000円〜。出張・見積もり無料。サンプル鍵レスキュー24" />
+<meta name="theme-color" content="#E63946" />
+<title>【最短15分】鍵のトラブル24時間対応 | サンプル鍵レスキュー24｜東京・神奈川・埼玉</title>
+
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Outfit:wght@500;600;700;800;900&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" rel="stylesheet">
+
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        primary: '#E63946',
+        'primary-dark': '#C5303D',
+        navy: '#0B2A4A',
+        'navy-light': '#1E3A5F',
+        accent: '#FFD60A',
+        success: '#10B981',
+        line: '#06C755',
+        fog: '#F5F7FA',
+        charcoal: '#1A1A1A',
+        slate: '#6B7280',
+      },
+      fontFamily: {
+        zen: ['"Zen Kaku Gothic New"', 'sans-serif'],
+        sans: ['"Noto Sans JP"', 'sans-serif'],
+        outfit: ['Outfit', 'sans-serif'],
+      },
+      animation: {
+        'pulse-ring': 'pulseRing 2s cubic-bezier(0.4,0,0.6,1) infinite',
+        'pulse-soft': 'pulseSoft 2.5s ease-in-out infinite',
+        'fade-up': 'fadeUp 0.8s ease-out forwards',
+        'slide-in-left': 'slideInLeft 0.7s ease-out forwards',
+        'slide-in-right': 'slideInRight 0.7s ease-out forwards',
+        'shimmer': 'shimmer 3s linear infinite',
+        'bounce-soft': 'bounceSoft 1.5s ease-in-out infinite',
+        'blink': 'blink 1.2s ease-in-out infinite',
+      },
+      keyframes: {
+        pulseRing: {
+          '0%': { transform: 'scale(0.95)', opacity: '0.8' },
+          '70%': { transform: 'scale(1.4)', opacity: '0' },
+          '100%': { transform: 'scale(1.4)', opacity: '0' },
+        },
+        pulseSoft: {
+          '0%, 100%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.04)' },
+        },
+        fadeUp: {
+          '0%': { opacity: '0', transform: 'translateY(30px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        slideInLeft: {
+          '0%': { opacity: '0', transform: 'translateX(-40px)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
+        slideInRight: {
+          '0%': { opacity: '0', transform: 'translateX(40px)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
+        shimmer: {
+          '0%': { backgroundPosition: '-1000px 0' },
+          '100%': { backgroundPosition: '1000px 0' },
+        },
+        bounceSoft: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-8px)' },
+        },
+        blink: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0.3' },
+        },
+      },
+    },
+  },
+};
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Noto Sans JP', 'Zen Kaku Gothic New', sans-serif;
+    color: #1A1A1A;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  .font-zen { font-family: 'Zen Kaku Gothic New', sans-serif; }
+  .font-outfit { font-family: 'Outfit', sans-serif; font-feature-settings: "tnum"; }
+
+  /* Hero gradient background */
+  .hero-bg {
+    background:
+      radial-gradient(ellipse at 20% 0%, rgba(230, 57, 70, 0.18) 0%, transparent 50%),
+      radial-gradient(ellipse at 90% 100%, rgba(255, 214, 10, 0.12) 0%, transparent 50%),
+      linear-gradient(180deg, #0B2A4A 0%, #112F52 60%, #0B2A4A 100%);
+  }
+  .hero-noise::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+    opacity: 0.06; pointer-events: none;
+  }
+
+  /* Phone button pulse */
+  .phone-pulse { position: relative; isolation: isolate; }
+  .phone-pulse::after {
+    content: ''; position: absolute; inset: 0; border-radius: inherit;
+    box-shadow: 0 0 0 0 rgba(230, 57, 70, 0.7);
+    animation: pulseRing 2s cubic-bezier(0.4,0,0.6,1) infinite;
+    z-index: -1;
+  }
+
+  /* Reveal animation utility */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s ease, transform .8s ease; }
+  .reveal.in-view { opacity: 1; transform: translateY(0); }
+  .reveal-stagger > * { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal-stagger.in-view > *:nth-child(1) { transition-delay: .05s; opacity: 1; transform: none; }
+  .reveal-stagger.in-view > *:nth-child(2) { transition-delay: .15s; opacity: 1; transform: none; }
+  .reveal-stagger.in-view > *:nth-child(3) { transition-delay: .25s; opacity: 1; transform: none; }
+  .reveal-stagger.in-view > *:nth-child(4) { transition-delay: .35s; opacity: 1; transform: none; }
+  .reveal-stagger.in-view > *:nth-child(5) { transition-delay: .45s; opacity: 1; transform: none; }
+  .reveal-stagger.in-view > *:nth-child(6) { transition-delay: .55s; opacity: 1; transform: none; }
+  .reveal-stagger.in-view > *:nth-child(7) { transition-delay: .65s; opacity: 1; transform: none; }
+  .reveal-stagger.in-view > *:nth-child(8) { transition-delay: .75s; opacity: 1; transform: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal, .reveal-stagger > * { opacity: 1 !important; transform: none !important; }
+    .phone-pulse::after { animation: none; }
+  }
+
+  /* Headline marker style */
+  .heading-marker {
+    position: relative; display: inline-block;
+  }
+  .heading-marker::before {
+    content: ''; position: absolute; left: 50%; bottom: -12px; transform: translateX(-50%);
+    width: 60px; height: 4px; border-radius: 4px;
+    background: linear-gradient(90deg, #E63946 0%, #FFD60A 100%);
+  }
+
+  /* Section number badge */
+  .sec-num {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    color: #E63946;
+  }
+
+  /* Custom scroll-snap for testimonials on mobile */
+  .snap-row { scroll-snap-type: x mandatory; }
+  .snap-row > * { scroll-snap-align: center; }
+
+  /* SVG map fill */
+  .area-region { fill: #0B2A4A; opacity: 0.85; transition: all .3s ease; cursor: pointer; }
+  .area-region:hover { fill: #E63946; opacity: 1; }
+  .area-label { fill: #fff; font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 700; pointer-events: none; }
+
+  /* Marquee for trust strip */
+  .marquee {
+    display: flex; overflow: hidden; gap: 3rem;
+    mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+  }
+  .marquee-track {
+    display: flex; gap: 3rem; flex-shrink: 0;
+    animation: marquee 30s linear infinite;
+  }
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+
+  /* Bottom-fixed phone bar (mobile only) */
+  @media (max-width: 768px) {
+    body { padding-bottom: 72px; }
+  }
+</style>
+</head>
+
+<body class="bg-white">
+
+<!-- ============== Top Trust Bar ============== -->
+<div class="bg-navy text-white text-xs md:text-sm py-2 px-4 text-center font-zen tracking-wide">
+  <span class="inline-flex items-center gap-2">
+    <span class="inline-block w-2 h-2 rounded-full bg-success animate-blink"></span>
+    24時間365日対応中｜現在 <span class="font-outfit text-accent font-bold mx-1" id="liveCount">12</span> 件 同時対応中｜最短15分で駆けつけます
+  </span>
+</div>
+
+<!-- ============== Header ============== -->
+<header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 md:h-20 flex items-center justify-between gap-4">
+    <a href="#" class="flex items-center gap-2 md:gap-3 shrink-0" aria-label="サンプル鍵レスキュー24 ホーム">
+      <div class="w-10 h-10 md:w-11 md:h-11 rounded-lg bg-gradient-to-br from-primary to-primary-dark grid place-items-center text-white shadow-md">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="w-6 h-6"><path d="M8 11V7a4 4 0 1 1 8 0v4"/><rect x="5" y="11" width="14" height="10" rx="2"/><circle cx="12" cy="16" r="1.5" fill="currentColor"/></svg>
+      </div>
+      <div class="leading-tight">
+        <div class="font-zen font-black text-navy text-base md:text-lg">サンプル鍵レスキュー<span class="text-primary">24</span></div>
+        <div class="text-[10px] md:text-xs text-slate font-zen">24時間365日｜東京・神奈川・埼玉対応</div>
+      </div>
+    </a>
+    <nav class="hidden lg:flex items-center gap-7 text-sm font-zen font-bold text-navy">
+      <a href="#price" class="hover:text-primary transition">料金</a>
+      <a href="#service" class="hover:text-primary transition">対応鍵</a>
+      <a href="#reason" class="hover:text-primary transition">選ばれる理由</a>
+      <a href="#voice" class="hover:text-primary transition">お客様の声</a>
+      <a href="#area" class="hover:text-primary transition">対応エリア</a>
+      <a href="#faq" class="hover:text-primary transition">FAQ</a>
+    </nav>
+    <div class="flex items-center gap-2">
+      <a href="tel:0120000000" class="hidden md:inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-4 py-2.5 rounded-full font-bold shadow-md transition active:scale-95">
+        <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .6 3.6 1 1 0 0 1-.25 1z"/></svg>
+        <span class="font-outfit text-base tracking-wide">0120-000-000</span>
+      </a>
+      <a href="#contact" class="hidden md:inline-flex items-center gap-2 bg-navy hover:bg-navy-light text-white px-4 py-2.5 rounded-full font-bold transition active:scale-95">
+        フォーム予約
+      </a>
+      <a href="tel:0120000000" class="md:hidden inline-flex items-center gap-1.5 bg-primary text-white px-3 py-2 rounded-full font-bold text-sm">
+        <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .6 3.6 1 1 0 0 1-.25 1z"/></svg>
+        電話する
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ============== HERO / First View ============== -->
+<section class="relative hero-bg hero-noise overflow-hidden">
+  <!-- Decorative -->
+  <div class="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-primary/20 blur-3xl pointer-events-none"></div>
+  <div class="absolute -bottom-32 -left-20 w-96 h-96 rounded-full bg-accent/10 blur-3xl pointer-events-none"></div>
+
+  <div class="relative max-w-7xl mx-auto px-4 md:px-6 py-12 md:py-20 lg:py-24 grid lg:grid-cols-12 gap-10 items-center">
+
+    <!-- Left: copy -->
+    <div class="lg:col-span-7 text-white">
+      <!-- Live badge -->
+      <div class="inline-flex items-center gap-2 bg-primary/20 border border-primary/40 backdrop-blur px-3 py-1.5 rounded-full text-xs md:text-sm font-zen font-bold mb-5 reveal in-view">
+        <span class="relative flex h-2.5 w-2.5">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-accent"></span>
+        </span>
+        現在 <span class="font-outfit text-accent" id="liveCountHero">12</span> 件 同時対応中・あと <span class="font-outfit text-accent">3</span> 名予約可能
+      </div>
+
+      <h1 class="font-zen font-black leading-[1.1] tracking-tight reveal in-view" style="font-size: clamp(2.25rem, 5vw + 1rem, 4.5rem);">
+        鍵のトラブル、<br class="md:hidden"/>
+        <span class="relative inline-block">
+          <span class="relative z-10">最短<span class="text-accent">15分</span>で</span>
+        </span><br/>
+        駆けつけます。
+      </h1>
+
+      <p class="mt-5 md:mt-7 text-base md:text-xl font-zen font-bold text-white/90 leading-relaxed reveal in-view">
+        24時間365日／出張・見積もり<span class="text-accent">完全無料</span>／追加料金一切なし<br class="hidden md:inline"/>
+        東京23区・神奈川東部・埼玉南部に急行。
+      </p>
+
+      <!-- Trust pills -->
+      <ul class="mt-6 flex flex-wrap gap-2 reveal in-view">
+        <li class="bg-white/10 backdrop-blur border border-white/20 text-white px-3 py-1.5 rounded-full text-xs md:text-sm font-zen font-bold">✓ 防犯設備士在籍</li>
+        <li class="bg-white/10 backdrop-blur border border-white/20 text-white px-3 py-1.5 rounded-full text-xs md:text-sm font-zen font-bold">✓ 損害保険1億円加入</li>
+        <li class="bg-white/10 backdrop-blur border border-white/20 text-white px-3 py-1.5 rounded-full text-xs md:text-sm font-zen font-bold">✓ 開かなかったら0円</li>
+        <li class="bg-white/10 backdrop-blur border border-white/20 text-white px-3 py-1.5 rounded-full text-xs md:text-sm font-zen font-bold">✓ 累計対応12万件</li>
+      </ul>
+
+      <!-- Primary CTA: phone -->
+      <div class="mt-8 md:mt-10 reveal in-view">
+        <div class="text-xs md:text-sm font-zen font-bold text-accent mb-2 tracking-wider">▼ 今すぐ電話で無料相談 ▼</div>
+        <a href="tel:0120000000" aria-label="電話する 0120-000-000"
+           class="phone-pulse group block bg-gradient-to-br from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-white rounded-2xl p-5 md:p-7 shadow-2xl transition active:scale-[0.98] border-2 border-white/20">
+          <div class="flex items-center gap-4">
+            <div class="w-14 h-14 md:w-16 md:h-16 rounded-full bg-white/20 grid place-items-center shrink-0 animate-pulse-soft">
+              <svg viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 md:w-9 md:h-9 text-white"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .6 3.6 1 1 0 0 1-.25 1z"/></svg>
+            </div>
+            <div class="flex-1 text-left">
+              <div class="text-xs md:text-sm font-zen font-bold opacity-90">通話料無料・24時間受付</div>
+              <div class="font-outfit font-black tracking-tight" style="font-size: clamp(2.25rem, 7vw, 3.75rem); line-height:1;">0120-000-000</div>
+              <div class="text-xs md:text-sm font-zen font-bold opacity-90 mt-1">タップですぐ繋がります</div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Secondary CTAs -->
+      <div class="mt-4 grid grid-cols-2 gap-3 reveal in-view">
+        <a href="#" class="flex items-center justify-center gap-2 bg-line hover:brightness-110 text-white py-3.5 rounded-xl font-zen font-bold shadow-lg transition active:scale-95">
+          <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M19 4H5C3.9 4 3 4.9 3 6v9c0 1.1 0.9 2 2 2h3v3.5L13 17h6c1.1 0 2-0.9 2-2V6c0-1.1-0.9-2-2-2z"/></svg>
+          LINEで相談
+        </a>
+        <a href="#contact" class="flex items-center justify-center gap-2 bg-white hover:bg-fog text-navy py-3.5 rounded-xl font-zen font-bold shadow-lg transition active:scale-95">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5"><path d="M3 8l9 6 9-6"/><rect x="3" y="6" width="18" height="14" rx="2"/></svg>
+          フォームで予約
+        </a>
+      </div>
+    </div>
+
+    <!-- Right: visual / stats -->
+    <div class="lg:col-span-5">
+      <div class="relative reveal in-view">
+        <!-- Big card -->
+        <div class="bg-white rounded-3xl shadow-2xl p-6 md:p-8 relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-accent/20 rounded-full blur-2xl"></div>
+          <div class="relative">
+            <div class="text-xs font-outfit font-bold text-primary tracking-widest mb-3">REAL-TIME STATUS</div>
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <div class="font-outfit font-black text-navy" style="font-size: clamp(2.5rem, 6vw, 3.5rem); line-height:1;">15<span class="text-2xl text-primary">分</span></div>
+                <div class="text-xs md:text-sm font-zen font-bold text-slate mt-1">最短到着時間</div>
+              </div>
+              <div>
+                <div class="font-outfit font-black text-navy" style="font-size: clamp(2.5rem, 6vw, 3.5rem); line-height:1;">24<span class="text-2xl text-primary">h</span></div>
+                <div class="text-xs md:text-sm font-zen font-bold text-slate mt-1">365日対応</div>
+              </div>
+              <div>
+                <div class="font-outfit font-black text-navy" style="font-size: clamp(2rem, 5vw, 2.75rem); line-height:1;">12<span class="text-xl text-primary">万件</span></div>
+                <div class="text-xs md:text-sm font-zen font-bold text-slate mt-1">累計対応実績</div>
+              </div>
+              <div>
+                <div class="font-outfit font-black text-navy" style="font-size: clamp(2rem, 5vw, 2.75rem); line-height:1;">¥0</div>
+                <div class="text-xs md:text-sm font-zen font-bold text-slate mt-1">出張・見積もり</div>
+              </div>
+            </div>
+            <div class="mt-6 pt-6 border-t border-gray-200">
+              <div class="flex items-center justify-between text-xs md:text-sm">
+                <span class="font-zen font-bold text-navy">ただ今の対応状況</span>
+                <span class="inline-flex items-center gap-1.5 text-success font-bold font-zen">
+                  <span class="w-2 h-2 rounded-full bg-success animate-blink"></span>
+                  すぐ繋がります
+                </span>
+              </div>
+              <div class="mt-3 h-2 bg-fog rounded-full overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-success via-accent to-primary rounded-full" style="width: 38%;"></div>
+              </div>
+              <div class="mt-2 text-xs text-slate font-zen">受付混雑度: 低</div>
+            </div>
+          </div>
+        </div>
+        <!-- Floating badge -->
+        <div class="absolute -top-4 -left-4 md:-top-6 md:-left-6 bg-accent text-navy px-4 py-2 rounded-full font-zen font-black text-sm md:text-base shadow-xl animate-bounce-soft">
+          満足度 96%
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== Trust Strip / Logos ============== -->
+<section class="bg-white py-8 border-b border-gray-100">
+  <div class="max-w-7xl mx-auto px-4 md:px-6">
+    <div class="text-center text-xs md:text-sm font-zen font-bold text-slate mb-5 tracking-wider">取引・協力実績</div>
+    <div class="marquee">
+      <div class="marquee-track">
+        <span class="font-zen font-bold text-navy/70 whitespace-nowrap">警視庁協力</span>
+        <span class="font-zen font-bold text-navy/70 whitespace-nowrap">JR東日本</span>
+        <span class="font-zen font-bold text-navy/70 whitespace-nowrap">日本郵政</span>
+        <span class="font-zen font-bold text-navy/70 whitespace-nowrap">三菱UFJ銀行</span>
+        <span class="font-zen font-bold text-navy/70 whitespace-nowrap">東京大学</span>
+        <span class="font-zen font-bold text-navy/70 whitespace-nowrap">日本ロックスミス協会</span>
+        <span class="font-zen font-bold text-navy/70 whitespace-nowrap">日本防犯設備協会</span>
+        <span class="font-zen font-bold text-navy/70 whitespace-nowrap">テレビ各局取材実績</span>
+      </div>
+      <div class="marquee-track" aria-hidden="true">
+        <span class="font-zen font-bold text-navy/70 whitespace-nowrap">警視庁協力</span>
+        <span class="font-zen font-bold text-navy/70 whitespace-nowrap">JR東日本</span>
+        <span class="font-zen font-bold text-navy/70 whitespace-nowrap">日本郵政</span>
+        <span class="font-zen font-bold text-navy/70 whitespace-nowrap">三菱UFJ銀行</span>
+        <span class="font-zen font-bold text-navy/70 whitespace-nowrap">東京大学</span>
+        <span class="font-zen font-bold text-navy/70 whitespace-nowrap">日本ロックスミス協会</span>
+        <span class="font-zen font-bold text-navy/70 whitespace-nowrap">日本防犯設備協会</span>
+        <span class="font-zen font-bold text-navy/70 whitespace-nowrap">テレビ各局取材実績</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== Pain Points Checklist ============== -->
+<section class="py-16 md:py-24 bg-fog">
+  <div class="max-w-6xl mx-auto px-4 md:px-6">
+    <div class="text-center mb-12 reveal">
+      <div class="sec-num mb-2">SECTION 01</div>
+      <h2 class="font-zen font-black text-navy heading-marker" style="font-size: clamp(1.75rem, 3vw + 0.5rem, 2.75rem);">
+        こんなお困りごと、<br class="md:hidden"/>ありませんか?
+      </h2>
+      <p class="mt-8 text-slate font-zen">1つでも当てはまったら、今すぐお電話ください。</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 reveal-stagger">
+      <!-- Card -->
+      <div class="bg-white rounded-2xl p-5 md:p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition border border-gray-100 flex items-start gap-4">
+        <div class="shrink-0 w-12 h-12 rounded-xl bg-primary/10 grid place-items-center">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#E63946" stroke-width="2.2" class="w-7 h-7"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </div>
+        <div>
+          <h3 class="font-zen font-black text-navy text-lg leading-tight">鍵を失くして<br/>家に入れない</h3>
+          <p class="mt-2 text-sm text-slate font-zen">紛失・盗難・落下…どんな状況でもお任せ。警察への遺失届もサポート。</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl p-5 md:p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition border border-gray-100 flex items-start gap-4">
+        <div class="shrink-0 w-12 h-12 rounded-xl bg-primary/10 grid place-items-center">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#E63946" stroke-width="2.2" class="w-7 h-7"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+        </div>
+        <div>
+          <h3 class="font-zen font-black text-navy text-lg leading-tight">鍵が折れた・<br/>回らない</h3>
+          <p class="mt-2 text-sm text-slate font-zen">経年劣化や歪みでの不具合。鍵穴掃除・修理・交換まで一括対応。</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl p-5 md:p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition border border-gray-100 flex items-start gap-4">
+        <div class="shrink-0 w-12 h-12 rounded-xl bg-primary/10 grid place-items-center">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#E63946" stroke-width="2.2" class="w-7 h-7"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+        </div>
+        <div>
+          <h3 class="font-zen font-black text-navy text-lg leading-tight">引っ越し後の<br/>鍵交換をしたい</h3>
+          <p class="mt-2 text-sm text-slate font-zen">中古物件・賃貸の防犯強化に。ディンプルキーへの交換も即日OK。</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl p-5 md:p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition border border-gray-100 flex items-start gap-4">
+        <div class="shrink-0 w-12 h-12 rounded-xl bg-primary/10 grid place-items-center">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#E63946" stroke-width="2.2" class="w-7 h-7"><circle cx="12" cy="12" r="10"/><path d="M9 12h6M12 9v6"/></svg>
+        </div>
+        <div>
+          <h3 class="font-zen font-black text-navy text-lg leading-tight">子どもが鍵を<br/>閉めてしまった</h3>
+          <p class="mt-2 text-sm text-slate font-zen">小さなお子様の閉じ込めも安全第一で迅速対応。深夜でもすぐ駆けつけます。</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl p-5 md:p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition border border-gray-100 flex items-start gap-4">
+        <div class="shrink-0 w-12 h-12 rounded-xl bg-primary/10 grid place-items-center">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#E63946" stroke-width="2.2" class="w-7 h-7"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg>
+        </div>
+        <div>
+          <h3 class="font-zen font-black text-navy text-lg leading-tight">金庫を開けたい・<br/>暗証番号を忘れた</h3>
+          <p class="mt-2 text-sm text-slate font-zen">家庭用・業務用・耐火金庫のダイヤル開錠。中身を傷つけず慎重に。</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl p-5 md:p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition border border-gray-100 flex items-start gap-4">
+        <div class="shrink-0 w-12 h-12 rounded-xl bg-primary/10 grid place-items-center">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#E63946" stroke-width="2.2" class="w-7 h-7"><path d="M3 12h18M5 12V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v6M7 12v6h10v-6"/><circle cx="9" cy="15" r="1" fill="#E63946"/></svg>
+        </div>
+        <div>
+          <h3 class="font-zen font-black text-navy text-lg leading-tight">車に鍵を閉じ込めた<br/>(インロック)</h3>
+          <p class="mt-2 text-sm text-slate font-zen">国産車・輸入車・スマートキー・イモビライザー対応。傷つけずに開錠。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- inline CTA after pain points -->
+    <div class="mt-12 reveal">
+      <div class="bg-gradient-to-r from-primary to-primary-dark rounded-2xl p-6 md:p-8 text-white text-center shadow-xl">
+        <p class="font-zen font-black text-xl md:text-2xl mb-1">迷ったらまず電話。受付スタッフが状況をお聞きします。</p>
+        <p class="text-sm md:text-base font-zen mb-5 text-white/90">通話料無料・24時間／お電話だけなら一切費用はかかりません</p>
+        <a href="tel:0120000000" class="phone-pulse inline-flex items-center gap-3 bg-white text-primary px-8 py-4 rounded-full font-outfit font-black shadow-2xl hover:scale-[1.03] transition active:scale-95" style="font-size: clamp(1.5rem, 4vw, 2rem);">
+          <svg viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7 md:w-8 md:h-8"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .6 3.6 1 1 0 0 1-.25 1z"/></svg>
+          0120-000-000
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== Pricing Table ============== -->
+<section id="price" class="py-16 md:py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-4 md:px-6">
+    <div class="text-center mb-12 reveal">
+      <div class="sec-num mb-2">SECTION 02</div>
+      <h2 class="font-zen font-black text-navy heading-marker" style="font-size: clamp(1.75rem, 3vw + 0.5rem, 2.75rem);">
+        明朗会計の料金表
+      </h2>
+      <p class="mt-8 text-slate font-zen text-base md:text-lg">作業前に必ず<span class="text-primary font-bold">総額をご提示</span>。追加料金は一切いただきません。</p>
+    </div>
+
+    <!-- Free items strip -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8 reveal-stagger">
+      <div class="bg-fog rounded-xl p-4 text-center border-2 border-success/20">
+        <div class="font-outfit font-black text-success text-3xl md:text-4xl">¥0</div>
+        <div class="font-zen font-bold text-navy text-sm mt-1">出張費</div>
+      </div>
+      <div class="bg-fog rounded-xl p-4 text-center border-2 border-success/20">
+        <div class="font-outfit font-black text-success text-3xl md:text-4xl">¥0</div>
+        <div class="font-zen font-bold text-navy text-sm mt-1">見積もり</div>
+      </div>
+      <div class="bg-fog rounded-xl p-4 text-center border-2 border-success/20">
+        <div class="font-outfit font-black text-success text-3xl md:text-4xl">¥0</div>
+        <div class="font-zen font-bold text-navy text-sm mt-1">キャンセル料</div>
+      </div>
+      <div class="bg-fog rounded-xl p-4 text-center border-2 border-success/20">
+        <div class="font-outfit font-black text-success text-3xl md:text-4xl">¥0</div>
+        <div class="font-zen font-bold text-navy text-sm mt-1">追加料金</div>
+      </div>
+    </div>
+
+    <!-- Pricing rows -->
+    <div class="bg-white border-2 border-navy/10 rounded-2xl overflow-hidden shadow-lg reveal">
+      <div class="grid grid-cols-12 bg-navy text-white py-3 px-4 text-xs md:text-sm font-zen font-bold tracking-wider">
+        <div class="col-span-5 md:col-span-4">サービス内容</div>
+        <div class="col-span-4 md:col-span-3 text-center">基本料金(税込)</div>
+        <div class="hidden md:block md:col-span-3 text-center">作業時間目安</div>
+        <div class="col-span-3 md:col-span-2 text-right">対応</div>
+      </div>
+
+      <!-- Row -->
+      <div class="grid grid-cols-12 items-center py-4 md:py-5 px-4 border-t border-gray-100 hover:bg-fog transition">
+        <div class="col-span-5 md:col-span-4">
+          <div class="font-zen font-black text-navy text-base md:text-lg">玄関の鍵開け</div>
+          <div class="text-xs text-slate font-zen mt-0.5">紛失・閉じ込め</div>
+        </div>
+        <div class="col-span-4 md:col-span-3 text-center">
+          <div class="font-outfit font-black text-primary text-xl md:text-2xl">¥8,800<span class="text-sm">〜</span></div>
+        </div>
+        <div class="hidden md:block md:col-span-3 text-center text-sm font-zen text-slate">5〜30分</div>
+        <div class="col-span-3 md:col-span-2 text-right">
+          <span class="inline-block bg-success/10 text-success font-zen font-bold text-xs px-2.5 py-1 rounded-full">即日OK</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-12 items-center py-4 md:py-5 px-4 border-t border-gray-100 hover:bg-fog transition">
+        <div class="col-span-5 md:col-span-4">
+          <div class="font-zen font-black text-navy text-base md:text-lg">鍵交換</div>
+          <div class="text-xs text-slate font-zen mt-0.5">シリンダー一式</div>
+        </div>
+        <div class="col-span-4 md:col-span-3 text-center">
+          <div class="font-outfit font-black text-primary text-xl md:text-2xl">¥15,000<span class="text-sm">〜</span></div>
+        </div>
+        <div class="hidden md:block md:col-span-3 text-center text-sm font-zen text-slate">30〜60分</div>
+        <div class="col-span-3 md:col-span-2 text-right">
+          <span class="inline-block bg-success/10 text-success font-zen font-bold text-xs px-2.5 py-1 rounded-full">即日OK</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-12 items-center py-4 md:py-5 px-4 border-t border-gray-100 hover:bg-fog transition">
+        <div class="col-span-5 md:col-span-4">
+          <div class="font-zen font-black text-navy text-base md:text-lg">鍵作成 (合鍵)</div>
+          <div class="text-xs text-slate font-zen mt-0.5">スペア作成</div>
+        </div>
+        <div class="col-span-4 md:col-span-3 text-center">
+          <div class="font-outfit font-black text-primary text-xl md:text-2xl">¥9,800<span class="text-sm">〜</span></div>
+        </div>
+        <div class="hidden md:block md:col-span-3 text-center text-sm font-zen text-slate">15〜90分</div>
+        <div class="col-span-3 md:col-span-2 text-right">
+          <span class="inline-block bg-success/10 text-success font-zen font-bold text-xs px-2.5 py-1 rounded-full">即日OK</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-12 items-center py-4 md:py-5 px-4 border-t border-gray-100 hover:bg-fog transition">
+        <div class="col-span-5 md:col-span-4">
+          <div class="font-zen font-black text-navy text-base md:text-lg">金庫の開錠</div>
+          <div class="text-xs text-slate font-zen mt-0.5">家庭用・業務用</div>
+        </div>
+        <div class="col-span-4 md:col-span-3 text-center">
+          <div class="font-outfit font-black text-primary text-xl md:text-2xl">¥16,500<span class="text-sm">〜</span></div>
+        </div>
+        <div class="hidden md:block md:col-span-3 text-center text-sm font-zen text-slate">30〜120分</div>
+        <div class="col-span-3 md:col-span-2 text-right">
+          <span class="inline-block bg-success/10 text-success font-zen font-bold text-xs px-2.5 py-1 rounded-full">即日OK</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-12 items-center py-4 md:py-5 px-4 border-t border-gray-100 hover:bg-fog transition">
+        <div class="col-span-5 md:col-span-4">
+          <div class="font-zen font-black text-navy text-base md:text-lg">車のインロック</div>
+          <div class="text-xs text-slate font-zen mt-0.5">国産・輸入車</div>
+        </div>
+        <div class="col-span-4 md:col-span-3 text-center">
+          <div class="font-outfit font-black text-primary text-xl md:text-2xl">¥8,800<span class="text-sm">〜</span></div>
+        </div>
+        <div class="hidden md:block md:col-span-3 text-center text-sm font-zen text-slate">10〜30分</div>
+        <div class="col-span-3 md:col-span-2 text-right">
+          <span class="inline-block bg-success/10 text-success font-zen font-bold text-xs px-2.5 py-1 rounded-full">即日OK</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-12 items-center py-4 md:py-5 px-4 border-t border-gray-100 hover:bg-fog transition">
+        <div class="col-span-5 md:col-span-4">
+          <div class="font-zen font-black text-navy text-base md:text-lg">イモビライザー鍵作成</div>
+          <div class="text-xs text-slate font-zen mt-0.5">電子キー・スマートキー</div>
+        </div>
+        <div class="col-span-4 md:col-span-3 text-center">
+          <div class="font-outfit font-black text-primary text-xl md:text-2xl">¥22,000<span class="text-sm">〜</span></div>
+        </div>
+        <div class="hidden md:block md:col-span-3 text-center text-sm font-zen text-slate">60〜180分</div>
+        <div class="col-span-3 md:col-span-2 text-right">
+          <span class="inline-block bg-accent/30 text-navy font-zen font-bold text-xs px-2.5 py-1 rounded-full">要相談</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-12 items-center py-4 md:py-5 px-4 border-t border-gray-100 hover:bg-fog transition">
+        <div class="col-span-5 md:col-span-4">
+          <div class="font-zen font-black text-navy text-base md:text-lg">ディンプルキー交換</div>
+          <div class="text-xs text-slate font-zen mt-0.5">高防犯・ピッキング対策</div>
+        </div>
+        <div class="col-span-4 md:col-span-3 text-center">
+          <div class="font-outfit font-black text-primary text-xl md:text-2xl">¥25,000<span class="text-sm">〜</span></div>
+        </div>
+        <div class="hidden md:block md:col-span-3 text-center text-sm font-zen text-slate">30〜90分</div>
+        <div class="col-span-3 md:col-span-2 text-right">
+          <span class="inline-block bg-success/10 text-success font-zen font-bold text-xs px-2.5 py-1 rounded-full">即日OK</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="mt-4 text-xs text-slate font-zen text-center">※深夜(22:00〜翌7:00)・日祝は別途+30%のお見積りとなります。お電話時に必ず総額をお伝えします。</p>
+
+    <!-- Reverse promise -->
+    <div class="mt-8 bg-navy text-white rounded-2xl p-6 md:p-8 grid md:grid-cols-3 gap-6 items-center reveal">
+      <div class="md:col-span-2">
+        <div class="text-accent font-outfit font-black text-sm tracking-widest mb-2">RISK FREE PROMISE</div>
+        <p class="font-zen font-black text-xl md:text-2xl leading-tight">
+          万一、開けられなかった場合は<br class="hidden md:inline"/>
+          <span class="text-accent">料金一切いただきません</span>
+        </p>
+        <p class="text-sm text-white/80 font-zen mt-2">経験豊富な技術者が対応するため、99.8%のケースで開錠成功しています。</p>
+      </div>
+      <div class="text-center">
+        <div class="font-outfit font-black text-accent text-5xl md:text-6xl">99.8<span class="text-2xl">%</span></div>
+        <div class="text-xs font-zen mt-1">開錠成功率(2025年実績)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== Lock Types ============== -->
+<section id="service" class="py-16 md:py-24 bg-fog">
+  <div class="max-w-6xl mx-auto px-4 md:px-6">
+    <div class="text-center mb-12 reveal">
+      <div class="sec-num mb-2">SECTION 03</div>
+      <h2 class="font-zen font-black text-navy heading-marker" style="font-size: clamp(1.75rem, 3vw + 0.5rem, 2.75rem);">
+        対応可能な鍵の種類
+      </h2>
+      <p class="mt-8 text-slate font-zen">家庭用から特殊鍵まで、ほぼすべての鍵に対応しています。</p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5 reveal-stagger">
+      <div class="bg-white rounded-2xl p-5 md:p-6 text-center border border-gray-100 hover:border-primary hover:shadow-xl transition group">
+        <div class="w-14 h-14 mx-auto rounded-2xl bg-primary/10 grid place-items-center group-hover:bg-primary group-hover:text-white transition">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-8 h-8 text-primary group-hover:text-white"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+        </div>
+        <h3 class="mt-3 font-zen font-black text-navy">玄関ドア</h3>
+        <p class="mt-1 text-xs text-slate font-zen">戸建・マンション・アパート</p>
+      </div>
+      <div class="bg-white rounded-2xl p-5 md:p-6 text-center border border-gray-100 hover:border-primary hover:shadow-xl transition group">
+        <div class="w-14 h-14 mx-auto rounded-2xl bg-primary/10 grid place-items-center group-hover:bg-primary group-hover:text-white transition">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-8 h-8 text-primary group-hover:text-white"><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M5 17H3V7l2-3h11l3 4h3v9h-2"/></svg>
+        </div>
+        <h3 class="mt-3 font-zen font-black text-navy">自動車</h3>
+        <p class="mt-1 text-xs text-slate font-zen">国産・輸入車・スマートキー</p>
+      </div>
+      <div class="bg-white rounded-2xl p-5 md:p-6 text-center border border-gray-100 hover:border-primary hover:shadow-xl transition group">
+        <div class="w-14 h-14 mx-auto rounded-2xl bg-primary/10 grid place-items-center group-hover:bg-primary group-hover:text-white transition">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-8 h-8 text-primary group-hover:text-white"><circle cx="6" cy="17" r="2"/><circle cx="18" cy="17" r="2"/><path d="M5 17h-1l3-7h6l3 5h2v2"/></svg>
+        </div>
+        <h3 class="mt-3 font-zen font-black text-navy">バイク</h3>
+        <p class="mt-1 text-xs text-slate font-zen">原付・大型・電動</p>
+      </div>
+      <div class="bg-white rounded-2xl p-5 md:p-6 text-center border border-gray-100 hover:border-primary hover:shadow-xl transition group">
+        <div class="w-14 h-14 mx-auto rounded-2xl bg-primary/10 grid place-items-center group-hover:bg-primary group-hover:text-white transition">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-8 h-8 text-primary group-hover:text-white"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M12 9V6M12 18v-3"/></svg>
+        </div>
+        <h3 class="mt-3 font-zen font-black text-navy">金庫</h3>
+        <p class="mt-1 text-xs text-slate font-zen">家庭用・業務用・耐火</p>
+      </div>
+      <div class="bg-white rounded-2xl p-5 md:p-6 text-center border border-gray-100 hover:border-primary hover:shadow-xl transition group">
+        <div class="w-14 h-14 mx-auto rounded-2xl bg-primary/10 grid place-items-center group-hover:bg-primary group-hover:text-white transition">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-8 h-8 text-primary group-hover:text-white"><rect x="4" y="6" width="16" height="14" rx="2"/><path d="M9 6V4a3 3 0 0 1 6 0v2"/></svg>
+        </div>
+        <h3 class="mt-3 font-zen font-black text-navy">ロッカー</h3>
+        <p class="mt-1 text-xs text-slate font-zen">職場・学校・公共施設</p>
+      </div>
+      <div class="bg-white rounded-2xl p-5 md:p-6 text-center border border-gray-100 hover:border-primary hover:shadow-xl transition group">
+        <div class="w-14 h-14 mx-auto rounded-2xl bg-primary/10 grid place-items-center group-hover:bg-primary group-hover:text-white transition">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-8 h-8 text-primary group-hover:text-white"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M3 12h18M9 7V4h6v3"/></svg>
+        </div>
+        <h3 class="mt-3 font-zen font-black text-navy">スーツケース</h3>
+        <p class="mt-1 text-xs text-slate font-zen">TSAロック・ダイヤル式</p>
+      </div>
+      <div class="bg-white rounded-2xl p-5 md:p-6 text-center border border-gray-100 hover:border-primary hover:shadow-xl transition group">
+        <div class="w-14 h-14 mx-auto rounded-2xl bg-primary/10 grid place-items-center group-hover:bg-primary group-hover:text-white transition">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-8 h-8 text-primary group-hover:text-white"><rect x="2" y="6" width="20" height="14" rx="2"/><path d="M2 10h20M7 6V4M17 6V4"/></svg>
+        </div>
+        <h3 class="mt-3 font-zen font-black text-navy">机・引き出し</h3>
+        <p class="mt-1 text-xs text-slate font-zen">事務所・店舗・自宅</p>
+      </div>
+      <div class="bg-white rounded-2xl p-5 md:p-6 text-center border border-gray-100 hover:border-primary hover:shadow-xl transition group">
+        <div class="w-14 h-14 mx-auto rounded-2xl bg-primary/10 grid place-items-center group-hover:bg-primary group-hover:text-white transition">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-8 h-8 text-primary group-hover:text-white"><rect x="3" y="4" width="6" height="16" rx="1"/><rect x="9" y="4" width="6" height="16" rx="1"/><rect x="15" y="4" width="6" height="16" rx="1"/><path d="M6 8h.01M12 8h.01M18 8h.01"/></svg>
+        </div>
+        <h3 class="mt-3 font-zen font-black text-navy">ポスト・<br/>暗証番号鍵</h3>
+        <p class="mt-1 text-xs text-slate font-zen">マンションエントランス</p>
+      </div>
+    </div>
+
+    <p class="mt-8 text-center text-sm text-slate font-zen">※ 上記以外の特殊鍵もご相談ください。ディンプルキー、ウェーブキー、ICカード鍵などにも対応しています。</p>
+  </div>
+</section>
+
+<!-- ============== Comparison Table ============== -->
+<section class="py-16 md:py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-4 md:px-6">
+    <div class="text-center mb-12 reveal">
+      <div class="sec-num mb-2">SECTION 04</div>
+      <h2 class="font-zen font-black text-navy heading-marker" style="font-size: clamp(1.75rem, 3vw + 0.5rem, 2.75rem);">
+        他社との比較
+      </h2>
+      <p class="mt-8 text-slate font-zen">同じ「鍵屋」でも、サービス内容には大きな差があります。</p>
+    </div>
+
+    <div class="overflow-x-auto reveal">
+      <table class="w-full min-w-[640px] bg-white rounded-2xl overflow-hidden shadow-lg">
+        <thead>
+          <tr class="bg-navy text-white">
+            <th class="text-left p-4 font-zen font-bold text-sm md:text-base">比較項目</th>
+            <th class="p-4 font-zen font-black text-sm md:text-base bg-primary relative">
+              <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-navy px-3 py-0.5 rounded-full text-xs font-black">当社</div>
+              サンプル鍵レスキュー24
+            </th>
+            <th class="p-4 font-zen font-bold text-sm md:text-base">A社<br/>(大手チェーン)</th>
+            <th class="p-4 font-zen font-bold text-sm md:text-base">B社<br/>(地域業者)</th>
+          </tr>
+        </thead>
+        <tbody class="text-sm md:text-base font-zen">
+          <tr class="border-b border-gray-100">
+            <td class="p-4 font-bold text-navy">最短到着時間</td>
+            <td class="p-4 text-center bg-primary/5 font-bold text-primary">15分</td>
+            <td class="p-4 text-center text-slate">30分〜</td>
+            <td class="p-4 text-center text-slate">60分〜</td>
+          </tr>
+          <tr class="border-b border-gray-100 bg-fog">
+            <td class="p-4 font-bold text-navy">出張費</td>
+            <td class="p-4 text-center bg-primary/5"><span class="inline-flex items-center gap-1 text-success font-bold">✓ 無料</span></td>
+            <td class="p-4 text-center text-slate">¥3,300</td>
+            <td class="p-4 text-center text-slate">¥5,500</td>
+          </tr>
+          <tr class="border-b border-gray-100">
+            <td class="p-4 font-bold text-navy">見積もり</td>
+            <td class="p-4 text-center bg-primary/5"><span class="inline-flex items-center gap-1 text-success font-bold">✓ 無料</span></td>
+            <td class="p-4 text-center text-slate">¥2,200</td>
+            <td class="p-4 text-center text-slate">有料</td>
+          </tr>
+          <tr class="border-b border-gray-100 bg-fog">
+            <td class="p-4 font-bold text-navy">追加料金</td>
+            <td class="p-4 text-center bg-primary/5"><span class="inline-flex items-center gap-1 text-success font-bold">✓ なし</span></td>
+            <td class="p-4 text-center text-primary">あり</td>
+            <td class="p-4 text-center text-primary">あり</td>
+          </tr>
+          <tr class="border-b border-gray-100">
+            <td class="p-4 font-bold text-navy">損害賠償保険</td>
+            <td class="p-4 text-center bg-primary/5"><span class="inline-flex items-center gap-1 text-success font-bold">✓ 1億円</span></td>
+            <td class="p-4 text-center text-slate">記載なし</td>
+            <td class="p-4 text-center text-slate">記載なし</td>
+          </tr>
+          <tr class="border-b border-gray-100 bg-fog">
+            <td class="p-4 font-bold text-navy">開錠成功率</td>
+            <td class="p-4 text-center bg-primary/5 font-bold text-primary">99.8%</td>
+            <td class="p-4 text-center text-slate">非公開</td>
+            <td class="p-4 text-center text-slate">非公開</td>
+          </tr>
+          <tr>
+            <td class="p-4 font-bold text-navy">支払い方法</td>
+            <td class="p-4 text-center bg-primary/5 font-bold text-success">現金・カード・QR・電子マネー</td>
+            <td class="p-4 text-center text-slate text-xs">現金のみ</td>
+            <td class="p-4 text-center text-slate text-xs">現金・カード</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="mt-4 text-xs text-slate font-zen text-center">※ 比較データは2026年4月時点の各社公式サイト掲載情報に基づきます。</p>
+  </div>
+</section>
+
+<!-- ============== CTA Banner #2 ============== -->
+<section class="py-12 md:py-16 bg-navy relative overflow-hidden">
+  <div class="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-primary/30 blur-3xl"></div>
+  <div class="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-accent/15 blur-3xl"></div>
+  <div class="relative max-w-5xl mx-auto px-4 md:px-6 text-center text-white">
+    <div class="text-accent font-outfit font-black tracking-widest text-xs md:text-sm mb-3">EMERGENCY HOTLINE</div>
+    <h3 class="font-zen font-black text-2xl md:text-4xl mb-2 leading-tight">今お困りなら、<br class="md:hidden"/>1分でも早くお電話を。</h3>
+    <p class="font-zen text-white/80 mb-8 text-sm md:text-base">受付スタッフがすぐ状況をヒアリング。最寄りの技術者が向かいます。</p>
+    <a href="tel:0120000000" class="phone-pulse inline-flex items-center gap-3 bg-primary hover:bg-primary-dark text-white px-8 md:px-12 py-5 md:py-6 rounded-full font-outfit font-black shadow-2xl hover:scale-[1.03] transition active:scale-95 border-2 border-white/20" style="font-size: clamp(1.75rem, 5vw, 2.5rem);">
+      <svg viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 md:w-10 md:h-10"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .6 3.6 1 1 0 0 1-.25 1z"/></svg>
+      0120-000-000
+    </a>
+    <div class="mt-4 text-xs md:text-sm font-zen text-white/70">通話料無料・24時間365日受付</div>
+  </div>
+</section>
+
+<!-- ============== Reasons Chosen ============== -->
+<section id="reason" class="py-16 md:py-24 bg-fog">
+  <div class="max-w-6xl mx-auto px-4 md:px-6">
+    <div class="text-center mb-12 reveal">
+      <div class="sec-num mb-2">SECTION 05</div>
+      <h2 class="font-zen font-black text-navy heading-marker" style="font-size: clamp(1.75rem, 3vw + 0.5rem, 2.75rem);">
+        選ばれる<span class="text-primary">5</span>つの理由
+      </h2>
+    </div>
+
+    <div class="space-y-6 md:space-y-8 reveal-stagger">
+      <!-- Reason 1 -->
+      <div class="bg-white rounded-3xl p-6 md:p-10 shadow-sm border border-gray-100 grid md:grid-cols-12 gap-6 items-center">
+        <div class="md:col-span-2 text-center">
+          <div class="font-outfit font-black text-primary" style="font-size: clamp(3rem, 8vw, 5rem); line-height:1;">01</div>
+          <div class="font-zen font-bold text-xs text-slate tracking-widest mt-1">REASON</div>
+        </div>
+        <div class="md:col-span-10">
+          <h3 class="font-zen font-black text-navy text-xl md:text-2xl">最短<span class="text-primary">15分</span>の急行体制(地域密着)</h3>
+          <p class="mt-3 font-zen text-slate leading-relaxed">東京・神奈川・埼玉に60名以上の自社スタッフが常時待機。GPSで最寄りの技術者を自動配車するため、平均到着時間は<span class="text-navy font-bold">23分</span>。深夜・早朝も同体制です。</p>
+          <div class="mt-4 inline-flex items-center gap-2 bg-success/10 text-success px-3 py-1.5 rounded-full text-xs font-zen font-bold">
+            ✓ 自社スタッフ60名以上 ／ ✓ GPS自動配車 ／ ✓ 平均到着23分
+          </div>
+        </div>
+      </div>
+
+      <!-- Reason 2 -->
+      <div class="bg-white rounded-3xl p-6 md:p-10 shadow-sm border border-gray-100 grid md:grid-cols-12 gap-6 items-center">
+        <div class="md:col-span-2 text-center">
+          <div class="font-outfit font-black text-primary" style="font-size: clamp(3rem, 8vw, 5rem); line-height:1;">02</div>
+          <div class="font-zen font-bold text-xs text-slate tracking-widest mt-1">REASON</div>
+        </div>
+        <div class="md:col-span-10">
+          <h3 class="font-zen font-black text-navy text-xl md:text-2xl">防犯設備士在籍・確かな技術力</h3>
+          <p class="mt-3 font-zen text-slate leading-relaxed">公益社団法人日本防犯設備協会認定の<span class="text-navy font-bold">防犯設備士</span>が常時8名在籍。ピッキング対策の高難度ディンプルキーやイモビライザー鍵にも完全対応。年4回の社内研修で技術アップデート。</p>
+          <div class="mt-4 inline-flex items-center gap-2 bg-success/10 text-success px-3 py-1.5 rounded-full text-xs font-zen font-bold">
+            ✓ 防犯設備士8名 ／ ✓ 年4回研修 ／ ✓ 99.8%開錠成功
+          </div>
+        </div>
+      </div>
+
+      <!-- Reason 3 -->
+      <div class="bg-white rounded-3xl p-6 md:p-10 shadow-sm border border-gray-100 grid md:grid-cols-12 gap-6 items-center">
+        <div class="md:col-span-2 text-center">
+          <div class="font-outfit font-black text-primary" style="font-size: clamp(3rem, 8vw, 5rem); line-height:1;">03</div>
+          <div class="font-zen font-bold text-xs text-slate tracking-widest mt-1">REASON</div>
+        </div>
+        <div class="md:col-span-10">
+          <h3 class="font-zen font-black text-navy text-xl md:text-2xl">出張・見積もり・キャンセル<span class="text-primary">全部無料</span></h3>
+          <p class="mt-3 font-zen text-slate leading-relaxed">業界の慣行を超えた、完全無料制度。お電話・現地でのお見積りまで一切費用は発生しません。<span class="text-navy font-bold">ご納得いただいてから</span>作業開始。</p>
+          <div class="mt-4 inline-flex items-center gap-2 bg-success/10 text-success px-3 py-1.5 rounded-full text-xs font-zen font-bold">
+            ✓ 出張0円 ／ ✓ 見積0円 ／ ✓ キャンセル0円
+          </div>
+        </div>
+      </div>
+
+      <!-- Reason 4 -->
+      <div class="bg-white rounded-3xl p-6 md:p-10 shadow-sm border border-gray-100 grid md:grid-cols-12 gap-6 items-center">
+        <div class="md:col-span-2 text-center">
+          <div class="font-outfit font-black text-primary" style="font-size: clamp(3rem, 8vw, 5rem); line-height:1;">04</div>
+          <div class="font-zen font-bold text-xs text-slate tracking-widest mt-1">REASON</div>
+        </div>
+        <div class="md:col-span-10">
+          <h3 class="font-zen font-black text-navy text-xl md:text-2xl">損害賠償保険1億円加入で万一も安心</h3>
+          <p class="mt-3 font-zen text-slate leading-relaxed">作業中の万一の事故・物損に備え、1事故あたり最大<span class="text-navy font-bold">1億円</span>の損害賠償責任保険に加入。お客様の大切な財産を守るため、万全の体制で臨みます。</p>
+          <div class="mt-4 inline-flex items-center gap-2 bg-success/10 text-success px-3 py-1.5 rounded-full text-xs font-zen font-bold">
+            ✓ 賠償保険1億円 ／ ✓ 古物商許可取得 ／ ✓ 警察協力実績
+          </div>
+        </div>
+      </div>
+
+      <!-- Reason 5 -->
+      <div class="bg-white rounded-3xl p-6 md:p-10 shadow-sm border border-gray-100 grid md:grid-cols-12 gap-6 items-center">
+        <div class="md:col-span-2 text-center">
+          <div class="font-outfit font-black text-primary" style="font-size: clamp(3rem, 8vw, 5rem); line-height:1;">05</div>
+          <div class="font-zen font-bold text-xs text-slate tracking-widest mt-1">REASON</div>
+        </div>
+        <div class="md:col-span-10">
+          <h3 class="font-zen font-black text-navy text-xl md:text-2xl">開かなかったら<span class="text-primary">料金一切いただきません</span></h3>
+          <p class="mt-3 font-zen text-slate leading-relaxed">業界最高水準の<span class="text-navy font-bold">リスクフリー保証</span>。万一開錠できなかった場合、出張料・作業料・部品代を含めた一切の費用をいただきません。お客様にリスクのない仕組みです。</p>
+          <div class="mt-4 inline-flex items-center gap-2 bg-success/10 text-success px-3 py-1.5 rounded-full text-xs font-zen font-bold">
+            ✓ 完全成果報酬 ／ ✓ 不納得時0円 ／ ✓ 領収書発行可
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== Case Studies ============== -->
+<section class="py-16 md:py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-4 md:px-6">
+    <div class="text-center mb-12 reveal">
+      <div class="sec-num mb-2">SECTION 06</div>
+      <h2 class="font-zen font-black text-navy heading-marker" style="font-size: clamp(1.75rem, 3vw + 0.5rem, 2.75rem);">
+        最近の緊急対応事例
+      </h2>
+      <p class="mt-8 text-slate font-zen">実際にあったご相談とその解決例をご紹介します。</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-5 md:gap-6 reveal-stagger">
+      <!-- Case 1 -->
+      <article class="bg-fog rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl transition">
+        <div class="bg-navy text-white px-5 py-3 flex items-center justify-between">
+          <span class="font-outfit font-black text-accent text-sm tracking-widest">CASE 01</span>
+          <span class="text-xs font-zen">2026.04.20 ／ 新宿区</span>
+        </div>
+        <div class="p-5 md:p-6">
+          <h3 class="font-zen font-black text-navy text-lg leading-tight">深夜2時、玄関の鍵を紛失して家に入れない</h3>
+          <div class="mt-3 grid grid-cols-3 gap-3 text-center text-xs">
+            <div class="bg-white rounded-lg p-2"><div class="text-slate font-zen">対応時間</div><div class="font-outfit font-black text-primary text-base">12分</div></div>
+            <div class="bg-white rounded-lg p-2"><div class="text-slate font-zen">作業時間</div><div class="font-outfit font-black text-primary text-base">15分</div></div>
+            <div class="bg-white rounded-lg p-2"><div class="text-slate font-zen">合計料金</div><div class="font-outfit font-black text-primary text-base">¥9,800</div></div>
+          </div>
+          <p class="mt-4 text-sm font-zen text-slate leading-relaxed">飲み会帰りに鍵を紛失されたお客様。深夜割増を含めても基本料金内で対応。鍵穴を傷つけずに開錠後、防犯のためそのまま鍵交換も実施。</p>
+        </div>
+      </article>
+
+      <!-- Case 2 -->
+      <article class="bg-fog rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl transition">
+        <div class="bg-navy text-white px-5 py-3 flex items-center justify-between">
+          <span class="font-outfit font-black text-accent text-sm tracking-widest">CASE 02</span>
+          <span class="text-xs font-zen">2026.04.18 ／ 横浜市</span>
+        </div>
+        <div class="p-5 md:p-6">
+          <h3 class="font-zen font-black text-navy text-lg leading-tight">スーパーの駐車場で車のインロック</h3>
+          <div class="mt-3 grid grid-cols-3 gap-3 text-center text-xs">
+            <div class="bg-white rounded-lg p-2"><div class="text-slate font-zen">対応時間</div><div class="font-outfit font-black text-primary text-base">18分</div></div>
+            <div class="bg-white rounded-lg p-2"><div class="text-slate font-zen">作業時間</div><div class="font-outfit font-black text-primary text-base">8分</div></div>
+            <div class="bg-white rounded-lg p-2"><div class="text-slate font-zen">合計料金</div><div class="font-outfit font-black text-primary text-base">¥8,800</div></div>
+          </div>
+          <p class="mt-4 text-sm font-zen text-slate leading-relaxed">買い物中に車内にスマートキーを置いたまま施錠してしまった事例。エアバッグを傷つけない専用工具で安全に開錠。お子様の熱中症リスクもあり最優先対応。</p>
+        </div>
+      </article>
+
+      <!-- Case 3 -->
+      <article class="bg-fog rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl transition">
+        <div class="bg-navy text-white px-5 py-3 flex items-center justify-between">
+          <span class="font-outfit font-black text-accent text-sm tracking-widest">CASE 03</span>
+          <span class="text-xs font-zen">2026.04.15 ／ さいたま市</span>
+        </div>
+        <div class="p-5 md:p-6">
+          <h3 class="font-zen font-black text-navy text-lg leading-tight">引っ越し当日の鍵交換と防犯強化</h3>
+          <div class="mt-3 grid grid-cols-3 gap-3 text-center text-xs">
+            <div class="bg-white rounded-lg p-2"><div class="text-slate font-zen">対応時間</div><div class="font-outfit font-black text-primary text-base">25分</div></div>
+            <div class="bg-white rounded-lg p-2"><div class="text-slate font-zen">作業時間</div><div class="font-outfit font-black text-primary text-base">45分</div></div>
+            <div class="bg-white rounded-lg p-2"><div class="text-slate font-zen">合計料金</div><div class="font-outfit font-black text-primary text-base">¥27,500</div></div>
+          </div>
+          <p class="mt-4 text-sm font-zen text-slate leading-relaxed">中古マンションご購入のお客様。前居住者と同じ鍵のままだと不安とのことで、ピッキング対策のディンプルキー2箇所に交換。防犯講習も無料実施。</p>
+        </div>
+      </article>
+
+      <!-- Case 4 -->
+      <article class="bg-fog rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl transition">
+        <div class="bg-navy text-white px-5 py-3 flex items-center justify-between">
+          <span class="font-outfit font-black text-accent text-sm tracking-widest">CASE 04</span>
+          <span class="text-xs font-zen">2026.04.10 ／ 川崎市</span>
+        </div>
+        <div class="p-5 md:p-6">
+          <h3 class="font-zen font-black text-navy text-lg leading-tight">事務所の金庫の暗証番号を忘れた</h3>
+          <div class="mt-3 grid grid-cols-3 gap-3 text-center text-xs">
+            <div class="bg-white rounded-lg p-2"><div class="text-slate font-zen">対応時間</div><div class="font-outfit font-black text-primary text-base">28分</div></div>
+            <div class="bg-white rounded-lg p-2"><div class="text-slate font-zen">作業時間</div><div class="font-outfit font-black text-primary text-base">90分</div></div>
+            <div class="bg-white rounded-lg p-2"><div class="text-slate font-zen">合計料金</div><div class="font-outfit font-black text-primary text-base">¥18,700</div></div>
+          </div>
+          <p class="mt-4 text-sm font-zen text-slate leading-relaxed">担当者退職で業務用金庫の暗証番号が不明に。重要書類が必要との緊急依頼。中身・金庫本体ともに無傷で開錠完了。番号再設定までサポート。</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============== Customer Voice ============== -->
+<section id="voice" class="py-16 md:py-24 bg-fog">
+  <div class="max-w-6xl mx-auto px-4 md:px-6">
+    <div class="text-center mb-12 reveal">
+      <div class="sec-num mb-2">SECTION 07</div>
+      <h2 class="font-zen font-black text-navy heading-marker" style="font-size: clamp(1.75rem, 3vw + 0.5rem, 2.75rem);">
+        お客様の声
+      </h2>
+      <p class="mt-8 text-slate font-zen">実際にご利用いただいたお客様からのリアルな声です。</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5 reveal-stagger">
+      <article class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex flex-col">
+        <div class="flex items-center gap-1 text-accent mb-3">
+          <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+        </div>
+        <h3 class="font-zen font-black text-navy leading-tight">本当に15分で来てくれた</h3>
+        <p class="mt-3 text-sm font-zen text-slate leading-relaxed flex-1">「半信半疑で電話したら、本当に15分で来てくれてビックリ。料金も電話で聞いた通りで安心しました。」</p>
+        <div class="mt-4 pt-4 border-t border-gray-100 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-accent grid place-items-center text-white font-zen font-bold">M</div>
+          <div>
+            <div class="font-zen font-bold text-navy text-sm">M.S 様</div>
+            <div class="text-xs text-slate font-zen">新宿区／30代女性</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex flex-col">
+        <div class="flex items-center gap-1 text-accent mb-3">
+          <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+        </div>
+        <h3 class="font-zen font-black text-navy leading-tight">深夜でも親切に対応</h3>
+        <p class="mt-3 text-sm font-zen text-slate leading-relaxed flex-1">「夜中に困って電話したのですが、慌てている私を落ち着かせてくれて、料金も明確で安心できました。」</p>
+        <div class="mt-4 pt-4 border-t border-gray-100 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-navy to-primary grid place-items-center text-white font-zen font-bold">T</div>
+          <div>
+            <div class="font-zen font-bold text-navy text-sm">T.K 様</div>
+            <div class="text-xs text-slate font-zen">横浜市／40代男性</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex flex-col">
+        <div class="flex items-center gap-1 text-accent mb-3">
+          <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5" opacity="0.4"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+        </div>
+        <h3 class="font-zen font-black text-navy leading-tight">追加料金がなくて◎</h3>
+        <p class="mt-3 text-sm font-zen text-slate leading-relaxed flex-1">「以前別の業者さんで、見積より高くなった経験があったので不安でしたが、最初のお見積通りでした。良心的。」</p>
+        <div class="mt-4 pt-4 border-t border-gray-100 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-accent to-primary grid place-items-center text-white font-zen font-bold">A</div>
+          <div>
+            <div class="font-zen font-bold text-navy text-sm">A.W 様</div>
+            <div class="text-xs text-slate font-zen">川崎市／50代女性</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex flex-col">
+        <div class="flex items-center gap-1 text-accent mb-3">
+          <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+        </div>
+        <h3 class="font-zen font-black text-navy leading-tight">防犯の相談にも乗ってくれた</h3>
+        <p class="mt-3 text-sm font-zen text-slate leading-relaxed flex-1">「鍵交換のついでに防犯の相談に乗ってくれて、補助錠の取り付けも提案いただきました。本当に頼りになる。」</p>
+        <div class="mt-4 pt-4 border-t border-gray-100 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-success to-navy grid place-items-center text-white font-zen font-bold">Y</div>
+          <div>
+            <div class="font-zen font-bold text-navy text-sm">Y.N 様</div>
+            <div class="text-xs text-slate font-zen">さいたま市／60代男性</div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <p class="mt-8 text-xs text-slate font-zen text-center">※ お客様の声は実際にいただいたものを掲載しております(イニシャル・年代は本人の許可を得て掲載)。</p>
+  </div>
+</section>
+
+<!-- ============== CTA Banner #3 ============== -->
+<section class="py-12 md:py-16 bg-gradient-to-br from-primary to-primary-dark relative overflow-hidden">
+  <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 25% 25%, white 1px, transparent 1px), radial-gradient(circle at 75% 75%, white 1px, transparent 1px); background-size: 40px 40px;"></div>
+  <div class="relative max-w-5xl mx-auto px-4 md:px-6 text-center text-white">
+    <h3 class="font-zen font-black text-2xl md:text-4xl mb-3 leading-tight">電話一本で、すぐにスタッフが向かいます</h3>
+    <p class="font-zen text-white/90 mb-7 text-sm md:text-base">迷っている時間が一番もったいない。まずはお電話ください。</p>
+    <a href="tel:0120000000" class="phone-pulse inline-flex items-center gap-3 bg-white text-primary px-8 md:px-12 py-5 md:py-6 rounded-full font-outfit font-black shadow-2xl hover:scale-[1.03] transition active:scale-95" style="font-size: clamp(1.75rem, 5vw, 2.5rem);">
+      <svg viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 md:w-10 md:h-10"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .6 3.6 1 1 0 0 1-.25 1z"/></svg>
+      0120-000-000
+    </a>
+  </div>
+</section>
+
+<!-- ============== Coverage Area ============== -->
+<section id="area" class="py-16 md:py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-4 md:px-6">
+    <div class="text-center mb-12 reveal">
+      <div class="sec-num mb-2">SECTION 08</div>
+      <h2 class="font-zen font-black text-navy heading-marker" style="font-size: clamp(1.75rem, 3vw + 0.5rem, 2.75rem);">
+        対応エリア
+      </h2>
+      <p class="mt-8 text-slate font-zen">東京・神奈川・埼玉エリアに最短15分で駆けつけます。</p>
+    </div>
+
+    <div class="grid lg:grid-cols-12 gap-8 items-start reveal">
+      <!-- SVG Map -->
+      <div class="lg:col-span-5 bg-fog rounded-3xl p-6 md:p-8">
+        <svg viewBox="0 0 320 280" class="w-full h-auto">
+          <!-- Saitama -->
+          <path class="area-region" d="M40,40 L240,40 L260,90 L240,130 L80,130 L40,90 Z"/>
+          <text x="150" y="90" class="area-label" text-anchor="middle" font-size="20">埼玉</text>
+          <!-- Tokyo -->
+          <path class="area-region" d="M80,130 L240,130 L260,180 L100,200 L60,170 Z" fill="#E63946"/>
+          <text x="160" y="170" class="area-label" text-anchor="middle" font-size="22" font-weight="900">東京23区</text>
+          <!-- Kanagawa -->
+          <path class="area-region" d="M100,200 L260,180 L280,240 L120,250 Z"/>
+          <text x="180" y="225" class="area-label" text-anchor="middle" font-size="20">神奈川</text>
+          <!-- Pin -->
+          <g transform="translate(155,165)">
+            <circle r="9" fill="#FFD60A"/>
+            <circle r="14" fill="#FFD60A" opacity="0.4">
+              <animate attributeName="r" from="9" to="22" dur="1.5s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" from="0.6" to="0" dur="1.5s" repeatCount="indefinite"/>
+            </circle>
+          </g>
+        </svg>
+        <div class="text-center mt-4 text-sm font-zen font-bold text-navy">
+          <span class="inline-flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-primary"></span>東京23区
+            <span class="w-3 h-3 rounded-full bg-navy ml-3"></span>神奈川・埼玉
+          </span>
+        </div>
+      </div>
+
+      <!-- Area list -->
+      <div class="lg:col-span-7 grid sm:grid-cols-3 gap-4">
+        <div class="bg-white border-2 border-primary/20 rounded-2xl p-5">
+          <h3 class="font-zen font-black text-primary text-base mb-3 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-primary"></span>東京23区(全域)
+          </h3>
+          <p class="text-xs font-zen text-slate leading-relaxed">千代田 / 中央 / 港 / 新宿 / 文京 / 台東 / 墨田 / 江東 / 品川 / 目黒 / 大田 / 世田谷 / 渋谷 / 中野 / 杉並 / 豊島 / 北 / 荒川 / 板橋 / 練馬 / 足立 / 葛飾 / 江戸川</p>
+        </div>
+        <div class="bg-white border-2 border-navy/20 rounded-2xl p-5">
+          <h3 class="font-zen font-black text-navy text-base mb-3 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-navy"></span>神奈川県東部
+          </h3>
+          <p class="text-xs font-zen text-slate leading-relaxed">横浜市 / 川崎市 / 鎌倉市 / 逗子市 / 大和市 / 海老名市 / 横須賀市 / 藤沢市 / 茅ヶ崎市</p>
+        </div>
+        <div class="bg-white border-2 border-navy/20 rounded-2xl p-5">
+          <h3 class="font-zen font-black text-navy text-base mb-3 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-navy"></span>埼玉県南部
+          </h3>
+          <p class="text-xs font-zen text-slate leading-relaxed">さいたま市 / 川口市 / 蕨市 / 戸田市 / 朝霞市 / 志木市 / 和光市 / 新座市 / 富士見市 / 三郷市 / 八潮市</p>
+        </div>
+        <div class="sm:col-span-3 bg-fog rounded-2xl p-5 text-center">
+          <p class="text-sm font-zen text-slate">エリア外でも対応可能な場合があります。まずはお気軽にお電話ください。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== Process / Flow ============== -->
+<section class="py-16 md:py-24 bg-fog">
+  <div class="max-w-6xl mx-auto px-4 md:px-6">
+    <div class="text-center mb-12 reveal">
+      <div class="sec-num mb-2">SECTION 09</div>
+      <h2 class="font-zen font-black text-navy heading-marker" style="font-size: clamp(1.75rem, 3vw + 0.5rem, 2.75rem);">
+        ご依頼から解決までの流れ
+      </h2>
+      <p class="mt-8 text-slate font-zen">最短15分で駆けつけ、その場で解決いたします。</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6 reveal-stagger">
+      <!-- Step 1 -->
+      <div class="relative bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+        <div class="absolute -top-3 -right-3 w-12 h-12 rounded-full bg-primary text-white grid place-items-center font-outfit font-black text-lg shadow-lg">01</div>
+        <div class="w-14 h-14 rounded-2xl bg-primary/10 grid place-items-center mb-4">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#E63946" stroke-width="2" class="w-7 h-7"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .6 3.6 1 1 0 0 1-.25 1z"/></svg>
+        </div>
+        <h3 class="font-zen font-black text-navy text-lg">お電話で受付</h3>
+        <p class="mt-2 text-sm font-zen text-slate leading-relaxed">受付スタッフが状況をヒアリング。お見積もりとお伺い時間をお伝えします。</p>
+      </div>
+      <!-- Step 2 -->
+      <div class="relative bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+        <div class="absolute -top-3 -right-3 w-12 h-12 rounded-full bg-primary text-white grid place-items-center font-outfit font-black text-lg shadow-lg">02</div>
+        <div class="w-14 h-14 rounded-2xl bg-primary/10 grid place-items-center mb-4">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#E63946" stroke-width="2" class="w-7 h-7"><path d="M21 16V8a2 2 0 0 0-1-1.7l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.7l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <h3 class="font-zen font-black text-navy text-lg">スタッフ急行</h3>
+        <p class="mt-2 text-sm font-zen text-slate leading-relaxed">最寄りの技術者が最短15分で到着。GPSで配車管理しています。</p>
+      </div>
+      <!-- Step 3 -->
+      <div class="relative bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+        <div class="absolute -top-3 -right-3 w-12 h-12 rounded-full bg-primary text-white grid place-items-center font-outfit font-black text-lg shadow-lg">03</div>
+        <div class="w-14 h-14 rounded-2xl bg-primary/10 grid place-items-center mb-4">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#E63946" stroke-width="2" class="w-7 h-7"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13l2 2 4-4"/></svg>
+        </div>
+        <h3 class="font-zen font-black text-navy text-lg">現地で再見積</h3>
+        <p class="mt-2 text-sm font-zen text-slate leading-relaxed">作業前に総額をご提示。ご納得いただいてから作業開始します。</p>
+      </div>
+      <!-- Step 4 -->
+      <div class="relative bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+        <div class="absolute -top-3 -right-3 w-12 h-12 rounded-full bg-primary text-white grid place-items-center font-outfit font-black text-lg shadow-lg">04</div>
+        <div class="w-14 h-14 rounded-2xl bg-primary/10 grid place-items-center mb-4">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#E63946" stroke-width="2" class="w-7 h-7"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+        </div>
+        <h3 class="font-zen font-black text-navy text-lg">作業＆お支払い</h3>
+        <p class="mt-2 text-sm font-zen text-slate leading-relaxed">作業完了後にお支払い。現金/クレカ/QR決済/電子マネー対応。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== CTA Banner #4 + Warning ============== -->
+<section class="py-16 md:py-20 bg-white">
+  <div class="max-w-5xl mx-auto px-4 md:px-6">
+    <!-- Warning about scam -->
+    <div class="bg-yellow-50 border-2 border-accent rounded-2xl p-6 md:p-8 mb-10 reveal">
+      <div class="flex items-start gap-4">
+        <div class="shrink-0 w-12 h-12 rounded-full bg-accent grid place-items-center">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#0B2A4A" stroke-width="2.5" class="w-7 h-7"><path d="M10.3 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.7 3.86a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></svg>
+        </div>
+        <div>
+          <h3 class="font-zen font-black text-navy text-lg md:text-xl">悪質業者にご注意ください</h3>
+          <p class="mt-2 text-sm font-zen text-slate leading-relaxed">2022年、消費者庁が複数の鍵業者に対し業務停止命令を発令しました。「数千円〜」と表示しながら現地で高額請求するケースが多発しています。当社は<span class="text-navy font-bold">電話時にお伝えした料金を厳守</span>。万一ご納得いただけなければお断りいただいて構いません。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="bg-gradient-to-r from-navy to-navy-light rounded-3xl p-8 md:p-12 text-center text-white shadow-xl reveal">
+      <div class="text-accent font-outfit font-black tracking-widest text-xs md:text-sm mb-3">CALL NOW</div>
+      <h3 class="font-zen font-black text-2xl md:text-4xl mb-3 leading-tight">透明性とスピードで選ばれる鍵屋</h3>
+      <p class="font-zen text-white/80 mb-7 text-sm md:text-base">鍵のことなら、なんでもご相談ください。</p>
+      <a href="tel:0120000000" class="phone-pulse inline-flex items-center gap-3 bg-primary hover:bg-primary-dark text-white px-8 md:px-12 py-5 md:py-6 rounded-full font-outfit font-black shadow-2xl hover:scale-[1.03] transition active:scale-95" style="font-size: clamp(1.75rem, 5vw, 2.5rem);">
+        <svg viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 md:w-10 md:h-10"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .6 3.6 1 1 0 0 1-.25 1z"/></svg>
+        0120-000-000
+      </a>
+      <div class="mt-4 text-xs md:text-sm font-zen text-white/70">通話料無料・24時間365日</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FAQ ============== -->
+<section id="faq" class="py-16 md:py-24 bg-fog">
+  <div class="max-w-4xl mx-auto px-4 md:px-6">
+    <div class="text-center mb-12 reveal">
+      <div class="sec-num mb-2">SECTION 10</div>
+      <h2 class="font-zen font-black text-navy heading-marker" style="font-size: clamp(1.75rem, 3vw + 0.5rem, 2.75rem);">
+        よくあるご質問
+      </h2>
+    </div>
+
+    <div class="space-y-3 reveal-stagger">
+      <details class="group bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+        <summary class="cursor-pointer list-none p-5 md:p-6 flex items-center gap-4 hover:bg-fog transition">
+          <span class="font-outfit font-black text-primary text-2xl shrink-0">Q</span>
+          <span class="font-zen font-bold text-navy flex-1">深夜・早朝でも対応してくれますか?</span>
+          <span class="shrink-0 w-8 h-8 rounded-full bg-primary/10 grid place-items-center group-open:rotate-180 transition">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#E63946" stroke-width="2.5" class="w-4 h-4"><path d="m6 9 6 6 6-6"/></svg>
+          </span>
+        </summary>
+        <div class="px-5 md:px-6 pb-5 md:pb-6 pl-16 md:pl-20 text-sm font-zen text-slate leading-relaxed border-t border-gray-100 pt-4">
+          はい、24時間365日対応しております。深夜・早朝・土日祝も同じ体制で受付しています。深夜帯(22:00〜翌7:00)・日祝は別途+30%の割増料金となりますが、お電話時に総額をお伝えします。
+        </div>
+      </details>
+
+      <details class="group bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+        <summary class="cursor-pointer list-none p-5 md:p-6 flex items-center gap-4 hover:bg-fog transition">
+          <span class="font-outfit font-black text-primary text-2xl shrink-0">Q</span>
+          <span class="font-zen font-bold text-navy flex-1">賃貸物件の鍵交換は大家の許可が必要ですか?</span>
+          <span class="shrink-0 w-8 h-8 rounded-full bg-primary/10 grid place-items-center group-open:rotate-180 transition">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#E63946" stroke-width="2.5" class="w-4 h-4"><path d="m6 9 6 6 6-6"/></svg>
+          </span>
+        </summary>
+        <div class="px-5 md:px-6 pb-5 md:pb-6 pl-16 md:pl-20 text-sm font-zen text-slate leading-relaxed border-t border-gray-100 pt-4">
+          はい、原則として大家様や管理会社様の許可が必要です。当社では大家様への連絡サポートも行っております。退去時の現状回復に関するアドバイスも承りますのでご相談ください。
+        </div>
+      </details>
+
+      <details class="group bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+        <summary class="cursor-pointer list-none p-5 md:p-6 flex items-center gap-4 hover:bg-fog transition">
+          <span class="font-outfit font-black text-primary text-2xl shrink-0">Q</span>
+          <span class="font-zen font-bold text-navy flex-1">警察に届け出た方がいいですか?</span>
+          <span class="shrink-0 w-8 h-8 rounded-full bg-primary/10 grid place-items-center group-open:rotate-180 transition">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#E63946" stroke-width="2.5" class="w-4 h-4"><path d="m6 9 6 6 6-6"/></svg>
+          </span>
+        </summary>
+        <div class="px-5 md:px-6 pb-5 md:pb-6 pl-16 md:pl-20 text-sm font-zen text-slate leading-relaxed border-t border-gray-100 pt-4">
+          鍵を紛失された場合、悪用防止のため警察への遺失届の提出をおすすめします。当社では作業時に「鍵紛失届出証明書」の発行も可能です(保険申請にもお使いいただけます)。
+        </div>
+      </details>
+
+      <details class="group bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+        <summary class="cursor-pointer list-none p-5 md:p-6 flex items-center gap-4 hover:bg-fog transition">
+          <span class="font-outfit font-black text-primary text-2xl shrink-0">Q</span>
+          <span class="font-zen font-bold text-navy flex-1">支払い方法は?</span>
+          <span class="shrink-0 w-8 h-8 rounded-full bg-primary/10 grid place-items-center group-open:rotate-180 transition">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#E63946" stroke-width="2.5" class="w-4 h-4"><path d="m6 9 6 6 6-6"/></svg>
+          </span>
+        </summary>
+        <div class="px-5 md:px-6 pb-5 md:pb-6 pl-16 md:pl-20 text-sm font-zen text-slate leading-relaxed border-t border-gray-100 pt-4">
+          現金、各種クレジットカード(VISA/Master/JCB/AMEX)、QRコード決済(PayPay/楽天Pay/LINE Pay/d払い)、電子マネー(Suica/PASMOなど)に対応しています。
+        </div>
+      </details>
+
+      <details class="group bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+        <summary class="cursor-pointer list-none p-5 md:p-6 flex items-center gap-4 hover:bg-fog transition">
+          <span class="font-outfit font-black text-primary text-2xl shrink-0">Q</span>
+          <span class="font-zen font-bold text-navy flex-1">領収書・請求書は発行できますか?</span>
+          <span class="shrink-0 w-8 h-8 rounded-full bg-primary/10 grid place-items-center group-open:rotate-180 transition">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#E63946" stroke-width="2.5" class="w-4 h-4"><path d="m6 9 6 6 6-6"/></svg>
+          </span>
+        </summary>
+        <div class="px-5 md:px-6 pb-5 md:pb-6 pl-16 md:pl-20 text-sm font-zen text-slate leading-relaxed border-t border-gray-100 pt-4">
+          はい、その場で発行可能です。インボイス制度に対応した適格請求書も発行できます(登録番号: T0000000000000)。法人様・個人事業主様もご安心ください。
+        </div>
+      </details>
+
+      <details class="group bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+        <summary class="cursor-pointer list-none p-5 md:p-6 flex items-center gap-4 hover:bg-fog transition">
+          <span class="font-outfit font-black text-primary text-2xl shrink-0">Q</span>
+          <span class="font-zen font-bold text-navy flex-1">防犯性の高い鍵に交換できますか?</span>
+          <span class="shrink-0 w-8 h-8 rounded-full bg-primary/10 grid place-items-center group-open:rotate-180 transition">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#E63946" stroke-width="2.5" class="w-4 h-4"><path d="m6 9 6 6 6-6"/></svg>
+          </span>
+        </summary>
+        <div class="px-5 md:px-6 pb-5 md:pb-6 pl-16 md:pl-20 text-sm font-zen text-slate leading-relaxed border-t border-gray-100 pt-4">
+          MIWA、GOAL、KABA、美和ロックなど主要メーカーのディンプルキーやウェーブキーを取り揃えています。CP認定錠への交換も承ります。在庫状況によっては取り寄せとなる場合があります。
+        </div>
+      </details>
+
+      <details class="group bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+        <summary class="cursor-pointer list-none p-5 md:p-6 flex items-center gap-4 hover:bg-fog transition">
+          <span class="font-outfit font-black text-primary text-2xl shrink-0">Q</span>
+          <span class="font-zen font-bold text-navy flex-1">作業中に鍵や扉を傷つけたら?</span>
+          <span class="shrink-0 w-8 h-8 rounded-full bg-primary/10 grid place-items-center group-open:rotate-180 transition">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#E63946" stroke-width="2.5" class="w-4 h-4"><path d="m6 9 6 6 6-6"/></svg>
+          </span>
+        </summary>
+        <div class="px-5 md:px-6 pb-5 md:pb-6 pl-16 md:pl-20 text-sm font-zen text-slate leading-relaxed border-t border-gray-100 pt-4">
+          1事故あたり最大1億円の損害賠償責任保険に加入しているため、万一の場合も保険で補償いたします。当社の作業による物損については全額負担しますのでご安心ください。
+        </div>
+      </details>
+
+      <details class="group bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+        <summary class="cursor-pointer list-none p-5 md:p-6 flex items-center gap-4 hover:bg-fog transition">
+          <span class="font-outfit font-black text-primary text-2xl shrink-0">Q</span>
+          <span class="font-zen font-bold text-navy flex-1">本人確認は必要ですか?</span>
+          <span class="shrink-0 w-8 h-8 rounded-full bg-primary/10 grid place-items-center group-open:rotate-180 transition">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#E63946" stroke-width="2.5" class="w-4 h-4"><path d="m6 9 6 6 6-6"/></svg>
+          </span>
+        </summary>
+        <div class="px-5 md:px-6 pb-5 md:pb-6 pl-16 md:pl-20 text-sm font-zen text-slate leading-relaxed border-t border-gray-100 pt-4">
+          鍵開け作業時は、防犯上の理由から運転免許証・保険証・公共料金の請求書など、ご本人様確認できる書類のご提示をお願いしております。本人確認できない場合は作業をお断りすることがあります。
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============== Insurance / License ============== -->
+<section class="py-16 md:py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-4 md:px-6">
+    <div class="text-center mb-12 reveal">
+      <div class="sec-num mb-2">SECTION 11</div>
+      <h2 class="font-zen font-black text-navy heading-marker" style="font-size: clamp(1.75rem, 3vw + 0.5rem, 2.75rem);">
+        資格・保険・許可番号
+      </h2>
+      <p class="mt-8 text-slate font-zen">公的な認定と保険で、お客様に安心を提供します。</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 reveal-stagger">
+      <div class="bg-fog rounded-2xl p-6 text-center">
+        <div class="w-16 h-16 mx-auto rounded-2xl bg-navy text-white grid place-items-center mb-4">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-9 h-9"><path d="M12 2 4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6z"/><path d="m9 12 2 2 4-4"/></svg>
+        </div>
+        <h3 class="font-zen font-black text-navy text-base">防犯設備士登録</h3>
+        <p class="mt-2 text-xs font-zen text-slate">公益社団法人<br/>日本防犯設備協会認定</p>
+        <div class="mt-3 font-outfit font-bold text-xs text-slate">登録番号 第00000号</div>
+      </div>
+      <div class="bg-fog rounded-2xl p-6 text-center">
+        <div class="w-16 h-16 mx-auto rounded-2xl bg-navy text-white grid place-items-center mb-4">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-9 h-9"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        </div>
+        <h3 class="font-zen font-black text-navy text-base">古物商許可</h3>
+        <p class="mt-2 text-xs font-zen text-slate">東京都公安委員会<br/>正規取得</p>
+        <div class="mt-3 font-outfit font-bold text-xs text-slate">第000000000000号</div>
+      </div>
+      <div class="bg-fog rounded-2xl p-6 text-center">
+        <div class="w-16 h-16 mx-auto rounded-2xl bg-navy text-white grid place-items-center mb-4">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-9 h-9"><path d="M12 22s8-4 8-10V6l-8-4-8 4v6c0 6 8 10 8 10Z"/></svg>
+        </div>
+        <h3 class="font-zen font-black text-navy text-base">損害賠償保険</h3>
+        <p class="mt-2 text-xs font-zen text-slate">1事故あたり<br/>最大1億円補償</p>
+        <div class="mt-3 font-outfit font-bold text-xs text-slate">三井住友海上火災保険</div>
+      </div>
+      <div class="bg-fog rounded-2xl p-6 text-center">
+        <div class="w-16 h-16 mx-auto rounded-2xl bg-navy text-white grid place-items-center mb-4">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-9 h-9"><circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/></svg>
+        </div>
+        <h3 class="font-zen font-black text-navy text-base">業界団体加盟</h3>
+        <p class="mt-2 text-xs font-zen text-slate">一般社団法人<br/>日本ロックスミス協会</p>
+        <div class="mt-3 font-outfit font-bold text-xs text-slate">正会員</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== Contact Form ============== -->
+<section id="contact" class="py-16 md:py-24 bg-navy text-white relative overflow-hidden">
+  <div class="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-primary/20 blur-3xl"></div>
+  <div class="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-accent/10 blur-3xl"></div>
+
+  <div class="relative max-w-3xl mx-auto px-4 md:px-6">
+    <div class="text-center mb-10 reveal">
+      <div class="text-accent font-outfit font-black tracking-widest text-xs md:text-sm mb-2">CONTACT</div>
+      <h2 class="font-zen font-black" style="font-size: clamp(1.75rem, 3vw + 0.5rem, 2.75rem);">
+        お問い合わせフォーム
+      </h2>
+      <p class="mt-4 text-white/80 font-zen">お電話できない方はこちらから。<span class="text-accent font-bold">24時間以内</span>にご連絡いたします。</p>
+    </div>
+
+    <form class="bg-white text-charcoal rounded-3xl p-6 md:p-10 shadow-2xl reveal" onsubmit="event.preventDefault(); document.getElementById('formSuccess').classList.remove('hidden'); this.reset();">
+      <div class="grid md:grid-cols-2 gap-5">
+        <div>
+          <label class="block text-sm font-zen font-bold text-navy mb-2">お名前 <span class="text-primary">*</span></label>
+          <input type="text" required class="w-full px-4 py-3 rounded-xl bg-fog border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/30 outline-none transition font-zen" placeholder="山田 太郎" />
+        </div>
+        <div>
+          <label class="block text-sm font-zen font-bold text-navy mb-2">電話番号 <span class="text-primary">*</span></label>
+          <input type="tel" required class="w-full px-4 py-3 rounded-xl bg-fog border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/30 outline-none transition font-outfit" placeholder="090-0000-0000" />
+        </div>
+        <div class="md:col-span-2">
+          <label class="block text-sm font-zen font-bold text-navy mb-2">メールアドレス</label>
+          <input type="email" class="w-full px-4 py-3 rounded-xl bg-fog border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/30 outline-none transition" placeholder="example@email.com" />
+        </div>
+        <div class="md:col-span-2">
+          <label class="block text-sm font-zen font-bold text-navy mb-2">ご相談内容 <span class="text-primary">*</span></label>
+          <select required class="w-full px-4 py-3 rounded-xl bg-fog border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/30 outline-none transition font-zen">
+            <option value="">選択してください</option>
+            <option>玄関の鍵開け</option>
+            <option>鍵交換</option>
+            <option>合鍵作成</option>
+            <option>金庫開錠</option>
+            <option>車・バイクの鍵</option>
+            <option>防犯強化の相談</option>
+            <option>その他</option>
+          </select>
+        </div>
+        <div class="md:col-span-2">
+          <label class="block text-sm font-zen font-bold text-navy mb-2">ご住所(エリア)</label>
+          <input type="text" class="w-full px-4 py-3 rounded-xl bg-fog border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/30 outline-none transition font-zen" placeholder="東京都新宿区..." />
+        </div>
+        <div class="md:col-span-2">
+          <label class="block text-sm font-zen font-bold text-navy mb-2">詳細・ご要望</label>
+          <textarea rows="4" class="w-full px-4 py-3 rounded-xl bg-fog border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/30 outline-none transition font-zen" placeholder="お困りの状況を詳しくお聞かせください"></textarea>
+        </div>
+        <div class="md:col-span-2">
+          <label class="flex items-start gap-3 cursor-pointer">
+            <input type="checkbox" required class="mt-1 w-5 h-5 rounded border-gray-300 text-primary focus:ring-primary" />
+            <span class="text-sm font-zen text-slate"><a href="#" class="text-primary underline">プライバシーポリシー</a>に同意する <span class="text-primary">*</span></span>
+          </label>
+        </div>
+        <div class="md:col-span-2">
+          <button type="submit" class="w-full bg-primary hover:bg-primary-dark text-white font-zen font-black py-4 rounded-2xl shadow-lg transition active:scale-[0.98] text-lg">
+            この内容で送信する
+          </button>
+        </div>
+      </div>
+
+      <div id="formSuccess" class="hidden mt-6 p-4 rounded-xl bg-success/10 border border-success/30 text-success font-zen font-bold text-center">
+        ✓ 送信が完了しました。24時間以内にご連絡いたします。
+      </div>
+    </form>
+
+    <div class="mt-10 text-center reveal">
+      <p class="text-white/70 text-sm font-zen mb-4">お急ぎの場合は、お電話が確実です</p>
+      <a href="tel:0120000000" class="phone-pulse inline-flex items-center gap-3 bg-white text-primary px-6 md:px-8 py-3 md:py-4 rounded-full font-outfit font-black shadow-lg active:scale-95 transition" style="font-size: clamp(1.25rem, 4vw, 1.75rem);">
+        <svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .6 3.6 1 1 0 0 1-.25 1z"/></svg>
+        0120-000-000
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============== Footer ============== -->
+<footer class="bg-charcoal text-white pt-14 pb-24 md:pb-14">
+  <div class="max-w-6xl mx-auto px-4 md:px-6">
+    <div class="grid md:grid-cols-12 gap-8 mb-10">
+      <div class="md:col-span-5">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-11 h-11 rounded-lg bg-gradient-to-br from-primary to-primary-dark grid place-items-center text-white shadow-md">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="w-6 h-6"><path d="M8 11V7a4 4 0 1 1 8 0v4"/><rect x="5" y="11" width="14" height="10" rx="2"/><circle cx="12" cy="16" r="1.5" fill="currentColor"/></svg>
+          </div>
+          <div>
+            <div class="font-zen font-black text-lg">サンプル鍵レスキュー<span class="text-primary">24</span></div>
+            <div class="text-xs text-white/60 font-zen">24時間365日｜東京・神奈川・埼玉</div>
+          </div>
+        </div>
+        <p class="text-sm font-zen text-white/70 leading-relaxed">鍵のトラブルは、私たちにお任せください。地域密着・最短15分・明朗会計でお客様の安心をお届けします。</p>
+      </div>
+
+      <div class="md:col-span-3">
+        <h3 class="font-zen font-black text-sm mb-4 text-accent">店舗情報</h3>
+        <dl class="text-sm font-zen text-white/80 space-y-2">
+          <div><dt class="text-white/50 text-xs">店舗名</dt><dd>サンプル鍵レスキュー24</dd></div>
+          <div><dt class="text-white/50 text-xs">住所</dt><dd>東京都新宿区サンプル町1-2-3</dd></div>
+          <div><dt class="text-white/50 text-xs">営業時間</dt><dd>24時間365日対応</dd></div>
+          <div><dt class="text-white/50 text-xs">対応エリア</dt><dd>東京23区・神奈川県東部・埼玉県南部</dd></div>
+        </dl>
+      </div>
+
+      <div class="md:col-span-4">
+        <h3 class="font-zen font-black text-sm mb-4 text-accent">お問い合わせ</h3>
+        <a href="tel:0120000000" class="block bg-primary hover:bg-primary-dark rounded-2xl p-5 mb-3 transition active:scale-[0.98]">
+          <div class="text-xs font-zen text-white/80">通話料無料・24時間</div>
+          <div class="font-outfit font-black text-3xl tracking-tight">0120-000-000</div>
+        </a>
+        <div class="grid grid-cols-2 gap-2">
+          <a href="#contact" class="bg-white/10 hover:bg-white/20 text-center py-2.5 rounded-xl text-sm font-zen font-bold transition">フォーム</a>
+          <a href="#" class="bg-line hover:brightness-110 text-center py-2.5 rounded-xl text-sm font-zen font-bold transition">LINE相談</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row md:items-center justify-between gap-4 text-xs font-zen text-white/50">
+      <div>© 2026 サンプル鍵レスキュー24. All rights reserved.</div>
+      <div class="flex flex-wrap gap-x-5 gap-y-2">
+        <a href="#" class="hover:text-white transition">プライバシーポリシー</a>
+        <a href="#" class="hover:text-white transition">特定商取引法に基づく表記</a>
+        <a href="#" class="hover:text-white transition">運営会社</a>
+        <a href="#" class="hover:text-white transition">サイトマップ</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============== Mobile Sticky Phone Bar ============== -->
+<div class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 shadow-2xl">
+  <div class="grid grid-cols-5 gap-1 p-2">
+    <a href="tel:0120000000" class="phone-pulse col-span-3 bg-primary text-white rounded-xl py-3 flex items-center justify-center gap-2 font-zen font-black text-sm active:scale-95 transition">
+      <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .6 3.6 1 1 0 0 1-.25 1z"/></svg>
+      <span>電話する</span>
+    </a>
+    <a href="#" class="bg-line text-white rounded-xl py-3 flex items-center justify-center font-zen font-black text-xs active:scale-95 transition">LINE</a>
+    <a href="#contact" class="bg-navy text-white rounded-xl py-3 flex items-center justify-center font-zen font-black text-xs active:scale-95 transition">フォーム</a>
+  </div>
+</div>
+
+<!-- ============== JavaScript ============== -->
+<script>
+// IntersectionObserver for reveal animations
+(function() {
+  if (!('IntersectionObserver' in window)) {
+    document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => el.classList.add('in-view'));
+    return;
+  }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => io.observe(el));
+})();
+
+// Live counter (simulated real-time activity)
+(function() {
+  const elHero = document.getElementById('liveCountHero');
+  const elTop = document.getElementById('liveCount');
+  if (!elHero && !elTop) return;
+  function tick() {
+    const base = 8;
+    const variation = Math.floor(Math.random() * 8);
+    const value = base + variation;
+    if (elHero) elHero.textContent = value;
+    if (elTop) elTop.textContent = value;
+  }
+  tick();
+  setInterval(tick, 9000);
+})();
+
+// Smooth scroll offset for sticky header
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    if (href === '#' || href === '') return;
+    const target = document.querySelector(href);
+    if (target) {
+      e.preventDefault();
+      const offset = 80;
+      const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  });
+});
+</script>
+
+</body>
+</html>
